@@ -20,12 +20,6 @@ emails:
 
 All keys are required.
 
-## Installation
-
-```
-$ dnf -y install git python python2-pip cairo pango
-$ pip install -U --user -r requirements.txt
-```
 
 ## Usage
 
@@ -45,9 +39,29 @@ optional arguments:
                    report.csv in current directory
 ```
 
+## Running
+
+### Locally
+
+Before running the tool locally you need to install some prerequisite.
+
+```
+$ dnf -y install git python python2-pip cairo pango
+$ pip install -U --user -r requirements.txt
+```
+
 Example:
 
 
 ```
 $ python scrapper.py --config config.yml --after 2018-01-01 --before 2018-07-01 --pdf report.pdf
 ```
+
+### Docker
+
+```
+$ mkdir reports
+$ docker run -it --rm -v `pwd`/config.yml:/config:ro,z -v `pwd`/reports:/reports:rw,z goldmann/git-scrapper:latest --config /config --after 2018-01-01 --before 2018-07-01 --pdf /reports/report.pdf
+```
+
+Reports will be available in the `reports/` directory.
