@@ -1,0 +1,23 @@
+
+body {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  margin: 1em;
+}
+
+th {
+  font-size: 0.8em;
+}
+td {
+  font-size: 0.6em;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1em;
+}
+code {
+  font-family: 'Roboto Mono', monospace;
+}

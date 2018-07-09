@@ -1,0 +1,33 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+</head>
+<body>
+
+<h1>Creative tax deduction monthly report</h1>
+
+<h2>{{ date_after.strftime('%Y-%m-%d') }} - {{ date_before.strftime('%Y-%m-%d') }}</h2>
+<h2>{{ name }}</h2>
+
+<div style="height: 1in"></div>
+
+{% for repo_name, commits in repos.items() %}
+<h2>{{ repo_name }}</h2>
+ <table style="width: 100%">
+  <tr>
+    <th>E-mail</th>
+    <th>Commit</th>
+    <th>Date</th>
+  </tr>
+  {% for commit in commits %}
+  <tr>
+    <td>{{ commit.email }}</td>
+    <td><code>{{ commit.hash }}</code></td>
+    <td>{{ commit.date }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endfor %}
+
+<body>
+</html>

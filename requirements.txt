@@ -1,0 +1,3 @@
+WeasyPrint==0.42.3
+Jinja2==2.10
+PyYAML==3.12
